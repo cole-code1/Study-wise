@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.env
+chat-history.sqlite
+chat-history.sqlite-shm
+chat-history.sqlite-wal
+__pycache__/
+*.py[cod]
+.venv/
