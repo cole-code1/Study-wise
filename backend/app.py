@@ -18,7 +18,7 @@ app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = f"sqlite:///{BACKEND_DIR / 'chat-history.sqlite'}"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 app.config["JSON_SORT_KEYS"] = False
-CORS(app, resources={r"/api/*": {"origins": os.getenv("FRONTEND_ORIGIN", "http://localhost:5173")}})
+CORS(app, resources={r"/api/*": {"origins": os.getenv("FRONTEND_ORIGIN", "https://study-wise-e4vg.onrender.com/")}})
 db.init_app(app)
 
 with app.app_context():

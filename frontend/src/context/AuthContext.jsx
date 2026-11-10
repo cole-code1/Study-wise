@@ -1,12 +1,13 @@
 import { createContext, useContext, useEffect, useState } from 'react';
 
 const AuthContext = createContext(null);
+const API_BASE_URL = (import.meta.env.VITE_API_URL || '').replace(/\/+$/, '');
 
 export function AuthProvider({ children }) {
   const [connection, setConnection] = useState('checking');
 
   async function api(path, options = {}) {
-    const response = await fetch(`/api${path}`, {
+    const response = await fetch(`${API_BASE_URL}/api${path}`, {
       ...options,
       headers: {
         'Content-Type': 'application/json',
